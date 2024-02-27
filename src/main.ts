@@ -13,6 +13,7 @@ interface Admin {
 }
 
 type Person = User | Admin;
+type partialPerson = Partial <Person>
 
 const persons: Person[] = [
   {
@@ -70,7 +71,7 @@ const logPerson = (person: Person) => {
   console.log(` - ${person.name}, ${person.age}, ${information}`);
 }
 
-const filterUsers = (persons: Person[], criteria: Partial<Person>): Person[] =>
+const filterUsers = (persons: Person[], criteria: partialPerson): Person[] =>
 persons.filter(isUser).filter((user) => {
     const criteriaKeys = Object.keys(criteria) as (keyof Person)[];
     return criteriaKeys.every((fieldName) => user[fieldName] === criteria[fieldName]);
