@@ -13,7 +13,7 @@ interface Admin {
 }
 
 type Person = User | Admin;
-type partialPerson = Partial <Person>
+type partialPerson = Partial<Person>
 
 const persons: Person[] = [
   {
