@@ -3,7 +3,7 @@ const persons = [
     {
         type: 'admin',
         name: 'Иван Петров',
-        age: 27,
+        age: 24,
         role: 'Administrator',
     },
     {
@@ -49,7 +49,7 @@ const logPerson = (person) => {
     }
     console.log(` - ${person.name}, ${person.age}, ${information}`);
 };
-const filterUsers = (persons, criteria) => persons.filter(isUser).filter((user) => {
+const filterUsers = (persons, criteria) => persons.filter((user) => {
     const criteriaKeys = Object.keys(criteria);
     return criteriaKeys.every((fieldName) => user[fieldName] === criteria[fieldName]);
 });

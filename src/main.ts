@@ -19,7 +19,7 @@ const persons: Person[] = [
   {
     type: 'admin',
     name: 'Иван Петров',
-    age: 27,
+    age: 24,
     role: 'Administrator',
   },
   {
@@ -72,7 +72,7 @@ const logPerson = (person: Person) => {
 }
 
 const filterUsers = (persons: Person[], criteria: partialPerson): Person[] =>
-persons.filter(isUser).filter((user) => {
+persons.filter((user) => {
     const criteriaKeys = Object.keys(criteria) as (keyof Person)[];
     return criteriaKeys.every((fieldName) => user[fieldName] === criteria[fieldName]);
   });
